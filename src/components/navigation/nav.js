@@ -1,8 +1,13 @@
 import { connect } from 'react-redux';
 import { exampleAction } from 'actions/navigation-action';
 import { Nav } from 'components/navigation/nav.styles';
+import { useSelector } from 'react-redux';
 
-const Navigation = ({ author, ExampleAction }) => {
+const Navigation = ({ ExampleAction }) => {
+  const author = useSelector(
+    ({ navigationReducer }) => navigationReducer.author
+  );
+  console.log(author);
   return (
     <Nav>
       <div>Nav</div>
@@ -10,13 +15,9 @@ const Navigation = ({ author, ExampleAction }) => {
     </Nav>
   );
 };
-const mapStateToProps = (state) => {
-  const { author } = state;
-  return { author };
-};
 
 const mapDispatchToProps = (dispatch) => ({
   ExampleAction: () => dispatch(exampleAction()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
+export default connect(null, mapDispatchToProps)(Navigation);
