@@ -1,23 +1,20 @@
-import { connect } from 'react-redux';
-import { exampleAction } from 'actions/navigation-action';
 import { Nav } from 'components/navigation/nav.styles';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-const Navigation = ({ ExampleAction }) => {
+const Navigation = () => {
   const author = useSelector(
     ({ navigationReducer }) => navigationReducer.author
   );
+  const dispatch = useDispatch();
   console.log(author);
   return (
     <Nav>
       <div>Nav</div>
-      <button onClick={ExampleAction}>Click me</button>
+      <button onClick={() => dispatch({ type: 'EXAMPLE_ACTION' })}>
+        Click me
+      </button>
     </Nav>
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  ExampleAction: () => dispatch(exampleAction()),
-});
-
-export default connect(null, mapDispatchToProps)(Navigation);
+export default Navigation;
