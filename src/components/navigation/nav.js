@@ -1,5 +1,7 @@
-import { Nav } from 'components/navigation/nav.styles';
+import { Nav, Title, Button } from 'components/navigation/nav.styles';
 import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   const author = useSelector(
@@ -9,10 +11,12 @@ const Navigation = () => {
   console.log(author);
   return (
     <Nav>
-      <div>Nav</div>
-      <button onClick={() => dispatch({ type: 'EXAMPLE_ACTION' })}>
+      <Title>MemCategory</Title>
+      <NavLink to="/hot">HOT</NavLink>
+      <NavLink to="/regular">REGULAR</NavLink>
+      <Button onClick={() => dispatch({ type: 'EXAMPLE_ACTION' })}>
         Click me
-      </button>
+      </Button>
     </Nav>
   );
 };
