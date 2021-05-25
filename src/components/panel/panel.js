@@ -1,13 +1,24 @@
 import { Wrapper, Title } from 'components/panel/panel.styles';
 import Mem from 'components/mem/mem';
-const tabHot = [1, 2, 3, 4, 5];
-const Panel = ({ title }) => {
+import { useSelector } from 'react-redux';
+
+const Panel = ({ category }) => {
+  const memData = useSelector(({ memReducer }) => memReducer.memData);
   return (
     <Wrapper>
-      <Title>{title}</Title>
-      {tabHot.map((item, i) => (
-        <Mem key={i} />
-      ))}
+      <Title>{category}</Title>
+      {category === 'HOT' &&
+        Object.entries(memData)
+          .filter((item) => item[1].upvotes - item[1].downvotes > 5)
+          .map((item, i) => <Mem key={i} data={item[1]} />)}
+      {category === 'REGULAR' &&
+        Object.entries(memData)
+          .filter((item) => item[1].upvotes - item[1].downvotes <= 5)
+          .map((item, i) => <Mem key={i} data={item[1]} />)}
+      {category === 'DEFAULT' &&
+        Object.entries(memData).map((item, i) => (
+          <Mem key={i} data={item[1]} />
+        ))}
     </Wrapper>
   );
 };

@@ -4,7 +4,7 @@ import Panel from 'components/panel/panel';
 const Default = () => {
   return (
     <MainTemplate>
-      <Panel title="DEFAULT" />
+      <Panel category="DEFAULT" />
     </MainTemplate>
   );
 };

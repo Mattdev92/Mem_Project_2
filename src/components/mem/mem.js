@@ -7,21 +7,27 @@ import {
   ButtonWrapper,
 } from 'components/mem/mem.styles';
 
-const Mem = () => {
+const Mem = ({ data }) => {
   const author = useSelector(
     ({ navigationReducer }) => navigationReducer.author
   );
   const dispatch = useDispatch();
   console.log(author);
+  const { title, upvotes, downvotes } = data;
   return (
     <Wrapper>
-      <Title>Mem</Title>
+      <Title>{title}</Title>
       <ButtonWrapper>
-        <Button onClick={() => dispatch({ type: 'EXAMPLE_ACTION' })}>
-          UpVote
+        <Button
+          onClick={() => dispatch({ type: 'UPVOTE_ACTION', payload: title })}
+        >
+          UpVote:
+          {upvotes}
         </Button>
-        <Button onClick={() => dispatch({ type: 'EXAMPLE_ACTION' })}>
-          DownVote
+        <Button
+          onClick={() => dispatch({ type: 'DOWNVOTE_ACTION', payload: title })}
+        >
+          DownVote: {downvotes}
         </Button>
       </ButtonWrapper>
     </Wrapper>

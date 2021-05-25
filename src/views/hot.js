@@ -4,7 +4,7 @@ import Panel from 'components/panel/panel';
 const Hot = () => {
   return (
     <MainTemplate>
-      <Panel title="HOT" />
+      <Panel category="HOT" />
     </MainTemplate>
   );
 };
