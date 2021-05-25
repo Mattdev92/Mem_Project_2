@@ -18,7 +18,7 @@ const Navigation = () => {
         <StyledLink to="/regular">REGULAR</StyledLink>
       </Nav>
       <Button onClick={() => dispatch({ type: 'EXAMPLE_ACTION' })}>
-        Click me
+        Add new MEM
       </Button>
     </Wrapper>
   );
