@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Wrapper = styled.nav`
+  border: 1px solid black;
+  border-radius: 100px 0 0 5px;
   position: absolute;
   top: 10vh;
   left: 10vw;
@@ -11,7 +13,7 @@ export const Wrapper = styled.nav`
   align-items: center;
   height: 80vh;
   width: 20vw;
-  background-color: ${({ theme }) => theme.colors.transparentBlack};
+  /* background-color: ${({ theme }) => theme.colors.transparentBlack}; */
   color: black;
 `;
 export const Nav = styled.nav`
@@ -25,15 +27,15 @@ export const Nav = styled.nav`
 export const Title = styled.div`
   display: flex;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin: 10px 0;
   width: 100%;
   height: 40px;
-  color: white;
+  font-family: 'Shadows Into Light', cursive;
 `;
 export const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors.transparentBlue};
-  color: white;
+  /* background-color: ${({ theme }) => theme.colors.hot}; */
+  color: black;
 `;
 const activeClassName = 'nav-item-active';
 export const StyledLink = styled(NavLink).attrs({ activeClassName })`
@@ -46,8 +48,8 @@ export const StyledLink = styled(NavLink).attrs({ activeClassName })`
   text-decoration: none;
   color: black;
   &.${activeClassName} {
-    background-color: black;
-    color: white;
+    background-color: red;
+    color: black;
     box-shadow: inset 0 0 1em black, 0 0 1em black;
   }
 `;

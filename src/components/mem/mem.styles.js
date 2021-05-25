@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

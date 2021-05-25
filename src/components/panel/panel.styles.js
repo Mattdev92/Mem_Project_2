@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  border-radius: 0 100px 5px 0;
   position: absolute;
   top: 10vh;
   right: 10vw;
