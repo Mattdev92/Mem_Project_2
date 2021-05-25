@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import React from 'react';
 import {
   Wrapper,
@@ -8,11 +8,7 @@ import {
 } from 'components/mem/mem.styles';
 
 const Mem = ({ data }) => {
-  const author = useSelector(
-    ({ navigationReducer }) => navigationReducer.author
-  );
   const dispatch = useDispatch();
-  console.log(author);
   const { title, upvotes, downvotes } = data;
   return (
     <Wrapper>

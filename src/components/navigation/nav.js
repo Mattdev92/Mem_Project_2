@@ -5,15 +5,11 @@ import {
   Button,
   StyledLink,
 } from 'components/navigation/nav.styles';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import React from 'react';
 
 const Navigation = () => {
-  const author = useSelector(
-    ({ navigationReducer }) => navigationReducer.author
-  );
   const dispatch = useDispatch();
-  console.log(author);
   return (
     <Wrapper>
       <Title>MemCategory</Title>
