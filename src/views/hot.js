@@ -1,11 +1,11 @@
-import MainTemplate from 'templates/main';
 import Panel from 'components/panel/panel';
+import ResponsiveDrawer from 'templates/responsiveApp/responsiveApp';
 
 const Hot = () => {
   return (
-    <MainTemplate>
+    <ResponsiveDrawer>
       <Panel category="HOT" />
-    </MainTemplate>
+    </ResponsiveDrawer>
   );
 };
 

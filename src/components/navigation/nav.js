@@ -2,7 +2,6 @@ import {
   Wrapper,
   Nav,
   Title,
-  Button,
   StyledLink,
 } from 'components/navigation/nav.styles';
 import { useDispatch } from 'react-redux';
@@ -12,6 +11,7 @@ import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ListIcon from '@material-ui/icons/List';
+import Button from '@material-ui/core/Button';
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -31,7 +31,10 @@ const Navigation = () => {
         </List>
         <Divider />
       </Nav>
-      <Button onClick={() => dispatch({ type: 'EXAMPLE_ACTION' })}>
+      <Button
+        variant="contained"
+        onClick={() => dispatch({ type: 'EXAMPLE_ACTION' })}
+      >
         Add new MEM
       </Button>
     </Wrapper>

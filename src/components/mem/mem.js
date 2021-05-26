@@ -1,31 +1,61 @@
 import { useDispatch } from 'react-redux';
 import React from 'react';
-import {
-  Wrapper,
-  Title,
-  Button,
-  ButtonWrapper,
-} from 'components/mem/mem.styles';
+import { Title, Wrapper } from 'components/mem/mem.styles';
+import { makeStyles } from '@material-ui/core/styles';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Fab from '@material-ui/core/Fab';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
+
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 140,
+  },
+});
 
 const Mem = ({ data }) => {
   const dispatch = useDispatch();
+  const classes = useStyles();
   const { title, upvotes, downvotes } = data;
   return (
-    <Wrapper>
-      <Title>{title}</Title>
-      <ButtonWrapper>
-        <Button
-          onClick={() => dispatch({ type: 'UPVOTE_ACTION', payload: title })}
-        >
-          UpVote:
-          {upvotes}
-        </Button>
-        <Button
-          onClick={() => dispatch({ type: 'DOWNVOTE_ACTION', payload: title })}
-        >
-          DownVote: {downvotes}
-        </Button>
-      </ButtonWrapper>
+    <Wrapper className={classes.root}>
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image="/static/images/cards/contemplative-reptile.jpg"
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Title>{title}</Title>
+          <CardActions>
+            <Fab
+              variant="extended"
+              onClick={() =>
+                dispatch({ type: 'UPVOTE_ACTION', payload: title })
+              }
+            >
+              <FavoriteIcon />
+              UpVote:
+              {upvotes}
+            </Fab>
+            <Fab
+              variant="extended"
+              onClick={() =>
+                dispatch({ type: 'DOWNVOTE_ACTION', payload: title })
+              }
+            >
+              <ThumbDownAltIcon />
+              DownVote: {downvotes}
+            </Fab>
+          </CardActions>
+        </CardContent>
+      </CardActionArea>
     </Wrapper>
   );
 };

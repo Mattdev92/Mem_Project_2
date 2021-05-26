@@ -1,11 +1,11 @@
-import MainTemplate from 'templates/main';
+import ResponsiveDrawer from 'templates/responsiveApp/responsiveApp';
 import Panel from 'components/panel/panel';
 
 const Regular = () => {
   return (
-    <MainTemplate>
+    <ResponsiveDrawer>
       <Panel category="REGULAR" />
-    </MainTemplate>
+    </ResponsiveDrawer>
   );
 };
 
