@@ -41,7 +41,7 @@ const Mem = ({ data }) => {
               }
             >
               <FavoriteIcon />
-              UpVote:
+              UpVote
               {upvotes}
             </Fab>
             <Fab
@@ -51,7 +51,7 @@ const Mem = ({ data }) => {
               }
             >
               <ThumbDownAltIcon />
-              DownVote: {downvotes}
+              DownVote {downvotes}
             </Fab>
           </CardActions>
         </CardContent>
