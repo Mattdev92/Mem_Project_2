@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
@@ -7,13 +6,16 @@ import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Nav from 'components/navigation/nav';
+import {
+  NavWrapper,
+  CustomToolbar,
+  StyledLink,
+} from 'templates/responsiveApp/responsiveApp.styles';
 
 const drawerWidth = 240;
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -58,11 +60,11 @@ function ResponsiveDrawer(props) {
   };
 
   const drawer = (
-    <div>
+    <NavWrapper>
       <div className={classes.toolbar} />
       <Divider />
       <Nav />
-    </div>
+    </NavWrapper>
   );
 
   const container =
@@ -72,7 +74,7 @@ function ResponsiveDrawer(props) {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
+        <CustomToolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -83,11 +85,11 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Responsive Mem App
+            <StyledLink to="/">Mem App</StyledLink>
           </Typography>
-        </Toolbar>
+        </CustomToolbar>
       </AppBar>
-      <nav className={classes.drawer} aria-label="mailbox folders">
+      <div className={classes.drawer}>
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
           <Drawer
@@ -117,7 +119,7 @@ function ResponsiveDrawer(props) {
             {drawer}
           </Drawer>
         </Hidden>
-      </nav>
+      </div>
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {children}
@@ -125,9 +127,5 @@ function ResponsiveDrawer(props) {
     </div>
   );
 }
-
-ResponsiveDrawer.propTypes = {
-  window: PropTypes.func,
-};
 
 export default ResponsiveDrawer;

@@ -12,14 +12,14 @@ import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    width: 500,
   },
   media: {
-    height: 140,
+    height: 300,
   },
 });
 
-const Mem = ({ data }) => {
+const Mem = ({ data, mem }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const { title, upvotes, downvotes } = data;
@@ -28,7 +28,7 @@ const Mem = ({ data }) => {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image={mem}
           title="Contemplative Reptile"
         />
         <CardContent>
@@ -41,7 +41,6 @@ const Mem = ({ data }) => {
               }
             >
               <FavoriteIcon />
-              UpVote
               {upvotes}
             </Fab>
             <Fab
@@ -51,7 +50,7 @@ const Mem = ({ data }) => {
               }
             >
               <ThumbDownAltIcon />
-              DownVote {downvotes}
+              {downvotes}
             </Fab>
           </CardActions>
         </CardContent>

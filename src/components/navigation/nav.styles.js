@@ -6,6 +6,7 @@ export const Wrapper = styled.nav`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  /* background-color: ${({ theme }) => theme.colors.coolGrey}; */
 `;
 export const Nav = styled.nav`
   display: flex;
@@ -13,6 +14,7 @@ export const Nav = styled.nav`
   flex-direction: column;
   font-size: 1.2rem;
   align-items: center;
+  height: 100%;
 `;
 export const Title = styled.div`
   display: flex;
@@ -20,6 +22,7 @@ export const Title = styled.div`
   font-size: 2rem;
   margin: 10px 0;
   width: 100%;
+  height: 60%;
   height: 40px;
   font-family: 'Shadows Into Light', cursive;
 `;
@@ -28,6 +31,8 @@ export const StyledLink = styled(NavLink).attrs({ activeClassName })`
   text-align: center;
   text-decoration: none;
   font-family: 'Cinzel', serif;
+  color: black;
+  font-size: 1.3rem;
   &.${activeClassName} {
     transform: translateX(10px) scale(1.2);
     transition: transform 1s ease-in;
