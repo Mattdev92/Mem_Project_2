@@ -19,7 +19,7 @@ const Panel = ({ category }) => {
           <MemLazy
             key={memInfo[1].title}
             data={memInfo[1]}
-            mem={memTab[memInfo[1].id]}
+            mem={memTab[memInfo[1].id - 1]}
           />
         </Suspense>
       ))}
