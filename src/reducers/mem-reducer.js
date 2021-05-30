@@ -1,3 +1,5 @@
+import { memTab } from 'components/panel/panel-helpers';
+
 const initialState = {
   memData: {
     'Mem 1': {
@@ -64,6 +66,7 @@ const initialState = {
       fav: false,
     },
   },
+  memTab,
 };
 export default function memReducer(state = initialState, action) {
   switch (action.type) {
@@ -99,6 +102,25 @@ export default function memReducer(state = initialState, action) {
             fav: !state.memData[action.payload].fav,
           },
         },
+      };
+    case 'ADD_ACTION':
+      return {
+        ...state,
+        memData: {
+          ...state.memData,
+          [`Mem ${action.payload.lastId + 1}`]: {
+            id: action.payload.lastId + 1,
+            title: `Mem ${action.payload.lastId + 1}`,
+            upvotes: action.payload.upvotes,
+            downvotes: action.payload.downvotes,
+            fav: false,
+          },
+        },
+      };
+    case 'ADD_IMAGE':
+      return {
+        ...state,
+        memTab: [...state.memTab, action.payload.image],
       };
     default:
       return state;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
 
 export const Wrapper = styled.nav`
   display: flex;
@@ -38,3 +39,9 @@ export const StyledLink = styled(NavLink).attrs({ activeClassName })`
     transition: transform 1s ease-in;
   }
 `;
+
+export const useStyles = makeStyles((theme) => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+}));

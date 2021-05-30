@@ -3,8 +3,8 @@ import {
   Nav,
   Title,
   StyledLink,
+  useStyles,
 } from 'components/navigation/nav.styles';
-import { useDispatch } from 'react-redux';
 import React from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -12,9 +12,12 @@ import Divider from '@material-ui/core/Divider';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ListIcon from '@material-ui/icons/List';
 import Button from '@material-ui/core/Button';
+import TransitionsModal from 'components/modal/modal';
+import AddIcon from '@material-ui/icons/Add';
 
 const Navigation = () => {
-  const dispatch = useDispatch();
+  const [open, setOpen] = React.useState(false);
+  const classes = useStyles();
   return (
     <Wrapper>
       <Title>MemCategory</Title>
@@ -37,10 +40,14 @@ const Navigation = () => {
       </Nav>
       <Button
         variant="contained"
-        onClick={() => dispatch({ type: 'EXAMPLE_ACTION' })}
+        color="primary"
+        className={classes.button}
+        startIcon={<AddIcon />}
+        onClick={() => setOpen(true)}
       >
         Add new MEM
       </Button>
+      <TransitionsModal open={open} setOpen={setOpen} />
     </Wrapper>
   );
 };
