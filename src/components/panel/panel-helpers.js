@@ -19,6 +19,8 @@ export const whichCategory = (category, memData) => {
       return dataArray.filter(
         (item) => item[1].upvotes - item[1].downvotes <= 5
       );
+    case 'FAVOURITE':
+      return dataArray.filter((item) => item[1].fav === true);
     case 'DEFAULT':
       return dataArray;
     default:

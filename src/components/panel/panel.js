@@ -9,7 +9,12 @@ const Panel = ({ category }) => {
   const memData = useSelector(({ memReducer }) => memReducer.memData);
   return (
     <Wrapper>
-      <Title>{category}</Title>
+      {category === 'DEFAULT' ? (
+        <Title>All available MEM</Title>
+      ) : (
+        <Title>{category}</Title>
+      )}
+
       {whichCategory(category, memData).map((memInfo) => (
         <Suspense
           fallback={

@@ -6,6 +6,7 @@ import { theme } from 'assets/styles/theme';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Hot from 'views/hot';
 import Regular from 'views/regular';
+import Favourite from 'views/favourite';
 import Default from 'views/default';
 
 const App = () => {
@@ -20,6 +21,9 @@ const App = () => {
             </Route>
             <Route path="/regular">
               <Regular />
+            </Route>
+            <Route path="/favourite">
+              <Favourite />
             </Route>
             <Route path="/">
               <Default />

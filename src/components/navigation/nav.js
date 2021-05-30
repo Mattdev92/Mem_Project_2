@@ -28,6 +28,10 @@ const Navigation = () => {
             <ListIcon />
             <StyledLink to="/regular">REGULAR</StyledLink>
           </ListItem>
+          <ListItem button>
+            <ListIcon />
+            <StyledLink to="/favourite">FAVOURITE</StyledLink>
+          </ListItem>
         </List>
         <Divider />
       </Nav>

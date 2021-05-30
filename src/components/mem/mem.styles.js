@@ -3,8 +3,8 @@ import Card from '@material-ui/core/Card';
 
 export const Wrapper = styled(Card)`
   margin: 20px;
-  @media (max-width: 500px) {
-    width: 300px;
+  @media (max-width: 900px) {
+    width: 250px;
   }
 `;
 
