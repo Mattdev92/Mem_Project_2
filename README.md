@@ -1,4 +1,4 @@
-# IT SPA
+# MEM
 
 It's the second diploma project which I prepared for my postgraduate studies "frontend with React". This project was prepared using modern React with Redux with available hooks. For styling I used a little of a material UI with custom styled components styling. Structure of the project is a standard React structure with divided on components.
 
@@ -37,7 +37,7 @@ Implemented solutions
     simple form validation: 
   - fields can't be empty
   - default image
-  8.global styles
+  8.Global styles
 
 ### Project architecture
 
