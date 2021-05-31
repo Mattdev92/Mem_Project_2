@@ -9,6 +9,8 @@ import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { isEmpty } from 'components/modal/modal-helpers';
+import Default from 'assets/default.jpg';
 
 export default function TransitionsModal({ open, setOpen }) {
   const dispatch = useDispatch();
@@ -22,7 +24,8 @@ export default function TransitionsModal({ open, setOpen }) {
   const [title, setTitle] = useState('');
   const [upvotes, setUpvotes] = useState(0);
   const [downvotes, setDownVotes] = useState(0);
-  const [image, setImage] = useState();
+  const [image, setImage] = useState(Default);
+  const [error, setError] = useState(false);
   return (
     <Modal
       aria-labelledby="transition-modal-title"
@@ -39,8 +42,10 @@ export default function TransitionsModal({ open, setOpen }) {
       <Fade in={open}>
         <Wrapper className={classes.paper}>
           <Title id="transition-modal-title">Add new MEM</Title>
-          <form className={classes.root} noValidate autoComplete="off">
+          <form className={classes.root} autoComplete="off">
             <TextField
+              error={error}
+              helperText="Fill all the filds"
               type="text"
               id="outlined-basic"
               label="Title"
@@ -48,6 +53,8 @@ export default function TransitionsModal({ open, setOpen }) {
               onChange={(e) => setTitle(e.target.value)}
             />
             <TextField
+              error={error}
+              helperText="Fill all the filds"
               type="number"
               id="outlined-basic"
               label="Upvotes"
@@ -55,6 +62,8 @@ export default function TransitionsModal({ open, setOpen }) {
               onChange={(e) => setUpvotes(e.target.value)}
             />
             <TextField
+              error={error}
+              helperText="Fill all the filds"
               type="number"
               id="outlined-basic"
               label="Downvotes"
@@ -75,15 +84,20 @@ export default function TransitionsModal({ open, setOpen }) {
             className={classes.button}
             startIcon={<SaveIcon />}
             onClick={() => {
-              handleClose();
-              dispatch({
-                type: 'ADD_ACTION',
-                payload: { title, upvotes, downvotes, lastId },
-              });
-              dispatch({
-                type: 'ADD_IMAGE',
-                payload: { image },
-              });
+              if (isEmpty(title, upvotes, downvotes)) {
+                setError(false);
+                handleClose();
+                dispatch({
+                  type: 'ADD_ACTION',
+                  payload: { title, upvotes, downvotes, lastId },
+                });
+                dispatch({
+                  type: 'ADD_IMAGE',
+                  payload: { image },
+                });
+              } else {
+                setError(true);
+              }
             }}
           >
             SAVE

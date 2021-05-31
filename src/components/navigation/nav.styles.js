@@ -7,7 +7,6 @@ export const Wrapper = styled.nav`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* background-color: ${({ theme }) => theme.colors.coolGrey}; */
 `;
 export const Nav = styled.nav`
   display: flex;
@@ -19,6 +18,7 @@ export const Nav = styled.nav`
 `;
 export const Title = styled.div`
   display: flex;
+  color: white;
   justify-content: center;
   font-size: 2rem;
   margin: 10px 0;
@@ -32,11 +32,13 @@ export const StyledLink = styled(NavLink).attrs({ activeClassName })`
   text-align: center;
   text-decoration: none;
   font-family: 'Cinzel', serif;
-  color: black;
+  color: white;
   font-size: 1.3rem;
+  padding: 5px;
   &.${activeClassName} {
     transform: translateX(10px) scale(1.2);
     transition: transform 1s ease-in;
+    border-bottom: 1px solid white;
   }
 `;
 

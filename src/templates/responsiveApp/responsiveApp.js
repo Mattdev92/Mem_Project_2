@@ -1,6 +1,5 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
@@ -14,6 +13,7 @@ import {
   CustomToolbar,
   StyledLink,
   useStyles,
+  AppWrapper,
 } from 'templates/responsiveApp/responsiveApp.styles';
 
 function ResponsiveDrawer(props) {
@@ -35,8 +35,7 @@ function ResponsiveDrawer(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
+    <AppWrapper className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <CustomToolbar>
           <IconButton
@@ -87,7 +86,7 @@ function ResponsiveDrawer(props) {
         <div className={classes.toolbar} />
         {children}
       </main>
-    </div>
+    </AppWrapper>
   );
 }
 

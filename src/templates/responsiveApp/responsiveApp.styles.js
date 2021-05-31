@@ -3,16 +3,19 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
+export const AppWrapper = styled.div`
+  background-color: white;
+`;
 export const NavWrapper = styled.div`
-  background-color: #00b0ff;
+  background: #424242;
   height: 100%;
 `;
 
 export const CustomToolbar = styled(Toolbar)`
   display: flex;
   justify-content: center;
-  background-color: black;
-  color: white;
+  background: #424242;
+  color: black;
   @media (max-width: 500px) {
     justify-content: flex-start;
   }

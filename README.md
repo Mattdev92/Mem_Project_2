@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# IT SPA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It's the second diploma project which I prepared for my postgraduate studies "frontend with React". This project was prepared using modern React with Redux with available hooks. For styling I used a little of a material UI with custom styled components styling. Structure of the project is a standard React structure with divided on components.
 
-## Available Scripts
+## How it works
+![](mem.gif)
 
-In the project directory, you can run:
+## Getting Started
+1. git clone 
+2. npm install
+3. npm start - run the project
 
-### `npm start`
+After finishing this orders you can display webpage on your device
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Used technologies:
+ 1. Modern React with hooks - as a main library
+ 2. Redux with hooks - as a state management
+ 3. material UI for styling
+ 4. styled components for custom styling
+ 5. React lazy - for lzy loading images
+ 6. React router - for routing
+ 7. prettier and eslint for static code anlizing
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Implemented solutions
 
-### `npm test`
+ 1. Routes /hot, /regular and /favourite
+ 2. Live filtering for mems (upvote - downvote > 5 ):
+ HOT (upvote - downvote > 5)
+ REGULAR (upvote - downvote <= 5)
+ FAVOURITE - fav icon signed
+ 3. Simple menu for switching between sections
+ 3. Mem database in Redux store
+ 4. List of Mem components in grid - with scroll funcionality
+ 5. NavLink funcionality - clicked route has custom class
+ 6. Mem added to favourite
+ 7. Add new mem funcionality
+    simple form validation: 
+  - fields can't be empty
+  - default image
+  8.global styles
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Project architecture
 
-### `npm run build`
+Project is diveded on a few categories 
+ 1. assets - styles and all images
+ 2. components - smaller parts of code that build all views and main page components like navigation, modal, mem etc.
+ 3. reducers - initial redux state  
+ 4. views - all views that you can switch in navigation component  
+ 5. store - redux store
+ 6. root files: index.js,
+ 7. templates - material UI template - provide material UI styling with responsive app funcionality
+ 7. configuration files: eslint, gitigore, package.json etc.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### How did I create this project?
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Project was prepared based on my own React and Redux template with custom prettier and eslint configuration
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Plan for future dvelopment
+Unit tests in progress...
 
-### `npm run eject`
+## Prettier and Eslint configuration
+Project has implemented static code formaters
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Authors
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* **Mateusz Grzejszczyk** - *Initial work* -
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+Free licence
