@@ -1,6 +1,6 @@
 # MEM
 
-It's the second diploma project which I prepared for my postgraduate studies "frontend with React". This project was prepared using modern React with Redux with available hooks. For styling I used a little of a material UI with custom styled components styling. Structure of the project is a standard React structure with divided on components.
+It's the second diploma project which I prepared for my postgraduate studies "frontend with React". This project was prepared using modern React with Redux with available hooks. For styling I used a little of a material UI with custom styled components styling. Structure of the project is a standard React structure  divided on components.
 
 ## How it works
 ![](mem.gif)
@@ -15,11 +15,11 @@ After finishing this orders you can display webpage on your device
 Used technologies:
  1. Modern React with hooks - as a main library
  2. Redux with hooks - as a state management
- 3. material UI for styling
- 4. styled components for custom styling
- 5. React lazy - for lzy loading images
+ 3. Material UI for styling
+ 4. Styled components for custom styling
+ 5. React lazy - for lazy loading images with spinner from React-loader-spinner
  6. React router - for routing
- 7. prettier and eslint for static code anlizing
+ 7. Prettier and eslint for static code anlizing
 
 Implemented solutions
 
@@ -33,11 +33,12 @@ Implemented solutions
  4. List of Mem components in grid - with scroll funcionality
  5. NavLink funcionality - clicked route has custom class
  6. Mem added to favourite
- 7. Add new mem funcionality
+ 7. Add new mem funcionality\
     simple form validation: 
   - fields can't be empty
   - default image
-  8.Global styles
+  - min and max value for votes
+8. Global styles
 
 ### Project architecture
 

@@ -60,6 +60,7 @@ export default function TransitionsModal({ open, setOpen }) {
               label="Upvotes"
               variant="outlined"
               onChange={(e) => setUpvotes(e.target.value)}
+              InputProps={{ inputProps: { min: 0, max: 10 } }}
             />
             <TextField
               error={error}
@@ -69,6 +70,7 @@ export default function TransitionsModal({ open, setOpen }) {
               label="Downvotes"
               variant="outlined"
               onChange={(e) => setDownVotes(e.target.value)}
+              InputProps={{ inputProps: { min: 0, max: 10 } }}
             />
             <TextField
               type="file"

@@ -7,14 +7,14 @@ export const AppWrapper = styled.div`
   background-color: white;
 `;
 export const NavWrapper = styled.div`
-  background: #424242;
+  background: #2076d2;
   height: 100%;
 `;
 
 export const CustomToolbar = styled(Toolbar)`
   display: flex;
   justify-content: center;
-  background: #424242;
+  background: #2076d2;
   color: black;
   @media (max-width: 500px) {
     justify-content: flex-start;
